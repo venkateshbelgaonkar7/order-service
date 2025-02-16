@@ -37,6 +37,4 @@ public class Order{
 
     @Embedded
     private Address address;
-
-
 }

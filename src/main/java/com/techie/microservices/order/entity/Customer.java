@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -21,9 +23,12 @@ public class Customer {
     private String firstName;
     @Column(name = "last_name")
     private String lastName;
-    @Column(name = "phone_number")
+    @Column(name = "phone_number", updatable = true)
     private String phoneNumber;
-    @Column(name = "email")
+    @Column(name = "email", updatable = true)
     private String email;
+
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Address> addresses;
 
 }

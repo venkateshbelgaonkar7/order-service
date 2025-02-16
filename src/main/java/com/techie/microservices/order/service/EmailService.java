@@ -13,16 +13,15 @@ import org.thymeleaf.spring6.SpringTemplateEngine;
 @Service
 public class EmailService {
 
-    @Autowired
     private JavaMailSender mailSender;
-    @Autowired
+
     private SpringTemplateEngine templateEngine;
 
     public void sendOrderConfirmationEmail(OrderRequest orderRequest) {
         Context context = new Context();
         context.setVariable("order", orderRequest);
 
-        String body = templateEngine.process("email-confirmation", context);
+        String body = templateEngine.process("Email-Confirmation", context);
 
         MimeMessagePreparator messagePreparator = mimeMessage -> {
             MimeMessageHelper messageHelper = new MimeMessageHelper(mimeMessage);

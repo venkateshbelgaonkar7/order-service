@@ -32,7 +32,6 @@ public class OrderService {
             order.setCustomer(orderRequest.customer());
             order.setAddress(orderRequest.address());
 
-
             // Save order to OrderRepository
             orderRepository.save(order);
 
