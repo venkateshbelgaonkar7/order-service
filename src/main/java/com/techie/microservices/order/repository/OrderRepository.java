@@ -1,13 +1,13 @@
 package com.techie.microservices.order.repository;
 
-import com.techie.microservices.order.model.OrderModel;
+import com.techie.microservices.order.model.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
 @Repository
-public interface OrderRepository extends JpaRepository<OrderModel, Long> {
+public interface OrderRepository extends JpaRepository<Order, Long> {
 
-    Optional<OrderModel> findByOrderNumber(String orderNumber);
+    Optional<Order> findByOrderNumber(String orderNumber);
 }

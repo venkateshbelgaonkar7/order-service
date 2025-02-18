@@ -1,8 +1,7 @@
 package com.techie.microservices.order.controller;
 
-import com.techie.microservices.order.entity.Customer;
+import com.techie.microservices.order.model.Customer;
 import com.techie.microservices.order.service.CustomerService;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +17,7 @@ public class CustomerController {
     }
 
     @PostMapping
-    public ResponseEntity<Customer> createCustomer(@RequestBody Customer customer) {
+    public Customer createCustomer(@RequestBody Customer customer) {
         return customerService.saveCustomer(customer);
     }
 }

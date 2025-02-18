@@ -1,8 +1,7 @@
 package com.techie.microservices.order.service;
 
-import com.techie.microservices.order.entity.Customer;
+import com.techie.microservices.order.model.Customer;
 import com.techie.microservices.order.repository.CustomerRepository;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,7 +16,7 @@ public class CustomerService {
         return customerRepository.findAll();
     }
 
-    public ResponseEntity<Customer> saveCustomer(Customer Customer) {
+    public Customer saveCustomer(Customer customer) {
         return customerRepository.save(customer);
     }
 }
